@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  validates_length_of :handle, :maximum=>20
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable

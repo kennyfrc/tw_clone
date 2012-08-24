@@ -11,6 +11,7 @@
 
 <% @tweets.each do |tweet| %>
   <tr>
+		<td><%= gravatar_for tweet.user%></td>
     <td><%= tweet.description %></td>
     <td><%= tweet.user.handle %></td>
     <td><%= link_to 'Link to this tweet', tweet %></td>
