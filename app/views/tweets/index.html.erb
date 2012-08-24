@@ -1,0 +1,26 @@
+<h1>Twitter Stream</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tweets.each do |tweet| %>
+  <tr>
+    <td><%= tweet.description %></td>
+    <td><%= tweet.user.handle %></td>
+    <td><%= link_to 'Link to this tweet', tweet %></td>
+    <% if tweet.user == current_user %>
+<td><%= link_to 'Delete', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tweet', new_tweet_path %>
