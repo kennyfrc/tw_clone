@@ -1,14 +1,3 @@
-<h1>Twitter Stream</h1>
-
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tweets.each do |tweet| %>
-
 <tr>
    <td><%= gravatar_for tweet.user%></td>
     <td><%= tweet.description %></td>
@@ -18,10 +7,3 @@
 <td><%= link_to 'Delete', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>	
 	<% end %>
 </tr>
-
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Tweet', new_tweet_path %>
