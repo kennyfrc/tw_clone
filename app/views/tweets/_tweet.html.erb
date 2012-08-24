@@ -1,9 +1,0 @@
-<tr>
-   <td><%= gravatar_for tweet.user%></td>
-    <td><%= tweet.description %></td>
-    <td> by <%= tweet.user.handle %></td>
- 		<td> <%= link_to tweet.created_at.strftime("%Y-%m-%d %H:%M"), tweet %></td>
-    <% if tweet.user == current_user %>
-<td><%= link_to 'Delete', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>	
-	<% end %>
-</tr>
