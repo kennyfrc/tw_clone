@@ -2,7 +2,11 @@ class TweetsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index]
   
   def index
-    @tweets = Tweet.order("created_at DESC")
+    if params[:search]
+      @tweets = Tweet.find(:all, :conditions => ['description LIKE ?', "%#{params[:search]}%"])
+    else
+     @tweets = Tweet.order("created_at DESC")
+    end
   end
 
   def new

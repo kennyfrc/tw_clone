@@ -1,4 +1,9 @@
-<h1>Twitter Stream</h1>
+<h1>Twitter Stream <%= form_tag tweets_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :description => nil %>
+  </p>
+<% end %></h1>
 
 <table>
   <tr>
@@ -24,5 +29,6 @@
 </table>
 
 <br />
+
 
 <%= link_to 'New Tweet', new_tweet_path %>
