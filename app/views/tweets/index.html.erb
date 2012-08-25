@@ -1,7 +1,7 @@
 <h1>Twitter Stream <%= form_tag tweets_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :description => nil %>
+    <%= submit_tag "Search Tweets", :description => nil, :class => "btn btn-info" %>
   </p>
 <% end %></h1>
 
